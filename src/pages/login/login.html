@@ -17,14 +17,14 @@
   <ion-list>
     <ion-item>
       <ion-label color="primary" floating>Email</ion-label>
-      <ion-input></ion-input>
+      <ion-input #email></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>Password</ion-label>
-      <ion-input></ion-input>
+      <ion-input #password></ion-input>
     </ion-item>
-    <button ion-button full>Login</button>
-    <button ion-button color="secondary" full>Register</button>
+    <button ion-button full (click)="signIn(email,password)">Login</button>
+    <button ion-button color="secondary" full (click)="signUp(email,password)">Register</button>
   </ion-list>
 
 </ion-content>
