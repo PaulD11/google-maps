@@ -54,7 +54,6 @@ export class LoginPage {
   }
 
   forgotPassword(email) {
-    firebase.auth().sendPasswordResetEmail(email);
-
+    firebase.auth().sendPasswordResetEmail(email.value);
   }
 }
