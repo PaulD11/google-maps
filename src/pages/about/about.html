@@ -7,24 +7,31 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngFor="let item of OrderItems | async">
+  <!--
+  <table class="table">
+    <thead>
+      <th>Titel </th>
+      <th> Preis </th>
+      <th> Kategorie </th>
+      <th> </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of OrderItems">
+        <td> {{item.Name}} </td>
+        <td> {{item.Adresse}} </td>
+        <td> {{item.Buchungsbeginn}} </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="deleteEverything()" class="btn btn-danger">Delete All</button>
+-->
 
-    
+  <ion-list>
     <ion-item>
-
-     <tr *ngFor="let item of OrderItems | async">
-            <td> {{item.Name}} </td>
-            <td> {{item.Adresse}} </td>
-            <td> {{item.Buchungsbeginn}} </td>
-            
-            </tr>
-
-
-    
       <ion-thumbnail item-start>
         <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/ac/e1/26/eingang.jpg">
       </ion-thumbnail>
-      <h2>{{item.Name}}</h2>
+      <h2>Test</h2>
       <p>Adresse</p>
       <button ion-button clear item-end>Details</button>
       <button ion-button icon-only>
@@ -32,9 +39,9 @@
       </button>
     </ion-item>
 
- 
+
   </ion-list>
 
 
-  
+
 </ion-content>
