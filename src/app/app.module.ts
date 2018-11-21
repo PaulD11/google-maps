@@ -16,6 +16,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from '../environment/environment';
 
+import { Observable } from 'rxjs/Observable';
+import {AngularFireList, AngularFireDatabase} from 'angularfire2/database';
+
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,6 +34,7 @@ import { firebaseConfig } from '../environment/environment';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig.fire),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

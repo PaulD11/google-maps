@@ -7,12 +7,24 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-list *ngFor="let item of OrderItems | async">
+
+    
     <ion-item>
+
+     <tr *ngFor="let item of OrderItems | async">
+            <td> {{item.Name}} </td>
+            <td> {{item.Adresse}} </td>
+            <td> {{item.Buchungsbeginn}} </td>
+            
+            </tr>
+
+
+    
       <ion-thumbnail item-start>
         <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/ac/e1/26/eingang.jpg">
       </ion-thumbnail>
-      <h2>Hotel </h2>
+      <h2>{{item.Name}}</h2>
       <p>Adresse</p>
       <button ion-button clear item-end>Details</button>
       <button ion-button icon-only>
