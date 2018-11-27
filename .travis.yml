@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+ — “8.9.4”
+branches:
+ only:
+ — master
+before_script:
+ — npm install -g ionic cordova
+script:
+ — ionic cordova build browser — prod
+notification:
+  email:
+    recipients:
+      -laura.meyer@hs-furtwangen.de
+      -inna.beierbach@hs-furtwangen.de
+      -michael.schilling@hs-furtwangen.de
+      -paul.dederer@hs-furtwangen.de
+    on_success: never
+    on_failure: always
+deploy:
+ provider: pages
+ skip-cleanup: true
+ github-token: $GITHUB_TOKEN 
+ keep-history: true
+ on:
+   branch: master
+ local_dir: www
