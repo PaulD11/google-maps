@@ -6,5 +6,6 @@ notifications:
   email:
     recipients:
       - laura.meyer@hs-furtwangen.de
+      - michael.schilling@hs-furtwangen.de
     on_success: always
 on_failure: always
