@@ -10,6 +10,7 @@ import * as firebase from 'firebase';
 export class AboutPage {
 
   hotels: any;
+  hotel: string;
 
   constructor(
     public navCtrl: NavController,
@@ -24,6 +25,7 @@ export class AboutPage {
   saveData(hotel) {
     this.firebaseService.saveData(hotel);
     this.hotels = this.retrieveData();
+    this.hotel = "";
   }
 
   retrieveData() {
