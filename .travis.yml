@@ -2,5 +2,9 @@ language: node_js
 node_js:
  — node
 install: npm install
-
-
+notifications:
+  email:
+    recipients:
+      - laura.meyer@hs-furtwangen.de
+    on_success: always
+on_failure: always
