@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
-import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-about',
@@ -19,26 +18,13 @@ export class AboutPage {
   }
 
   ionViewDidLoad(){
-    this.hotels = this.retrieveData();
+    this.hotels = this.firebaseService.retrieveData();
+    console.log(this.hotels.__zone_symbol__value);
   }
 
   saveData(hotel) {
     this.firebaseService.saveData(hotel);
-    this.hotels = this.retrieveData();
+    this.hotels = this.firebaseService.retrieveData();
     this.hotel = "";
   }
-
-  retrieveData() {
-    return firebase.database().ref('/hotels').once('value').then(function (snapshot) {
-      var returnArr = [];
-      snapshot.forEach(function(child) {
-          var item = child.val();
-          item.key = child.key;
-  
-          returnArr.push(item);
-      });
-      return returnArr;
-    });
-  }
-
 }

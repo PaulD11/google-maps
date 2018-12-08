@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
-/*
-  Generated class for the FirebaseProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class FirebaseProvider {
 
@@ -24,6 +19,18 @@ export class FirebaseProvider {
       } else {
         console.log("success");
       }
+    });
+  }
+
+  retrieveData() {
+    return firebase.database().ref('hotels').once('value').then((snapshot) => {
+      let hotelData = [];
+      snapshot.forEach(function(child) {
+          let item = child.val();
+          item.key = child.key;
+          hotelData.push(item);
+      });
+      return hotelData;
     });
   }
 

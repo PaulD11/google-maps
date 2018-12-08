@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { MarkerProvider } from '../../providers/marker/marker';
 
 declare var google;
 
@@ -14,8 +15,11 @@ export class HomePage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
 
+
+
   constructor(
-    public navCtrl: NavController) {
+    public navCtrl: NavController,
+    private markerService: MarkerProvider) {
   }
 
   ionViewDidLoad() {
@@ -33,6 +37,6 @@ export class HomePage {
     }
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-
+    this.markerService.setMarker(this.map);
   }
 }
