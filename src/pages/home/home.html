@@ -12,4 +12,9 @@
 <ion-content>
   <div #map id="map"></div> 
   <button ion-button color="light" (click)="saveData()">Save Data</button>
+  <ion-list>
+		<ion-item class="text" *ngFor="let hotel of hotels | async">
+			{{hotel | json}}
+		</ion-item>
+	</ion-list>
 </ion-content>

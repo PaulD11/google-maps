@@ -27,11 +27,4 @@ export class FirebaseProvider {
     });
   }
 
-  retrieveData() {
-    var hotelsRef = firebase.database().ref('/hotels/');
-    return firebase.database().ref('/hotels/').once('value').then(function (snapshot) {
-        console.log(snapshot)
-    });
-  }
-
 }
