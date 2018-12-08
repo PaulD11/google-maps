@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
  
 declare var google;
  
@@ -12,7 +13,9 @@ export class HomePage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
  
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    private firebaseService: FirebaseProvider) {
  
   }
  
@@ -32,5 +35,9 @@ export class HomePage {
  
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
  
+  }
+
+  saveData(){
+    this.firebaseService.saveData("Hotel Ritter");
   }
 }
