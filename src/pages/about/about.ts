@@ -22,11 +22,11 @@ export class AboutPage {
     this.hotels = this.retrieveData();
   }
 
-  saveData(hotel) {
+ /* saveData(hotel) {
     this.firebaseService.saveData(hotel);
     this.hotels = this.retrieveData();
     this.hotel = "";
-  }
+  }*/
 
   retrieveData() {
     return firebase.database().ref('/hotels').once('value').then(function (snapshot) {
