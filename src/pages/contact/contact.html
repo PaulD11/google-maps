@@ -1,17 +1,47 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Hotelzimmer freigeben
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter Test Laura</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+ 
+   
+  <ion-item>
+    <ion-label color="primary">Hotelname</ion-label>
+    <ion-input placeholder="Bitte eingeben"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Ort</ion-label>
+    <ion-input placeholder="Bitte eingeben"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Preis</ion-label>
+    <ion-input placeholder="Bitte eingeben"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Datum</ion-label>
+    <ion-input placeholder="Bitte eingeben"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Uhrzeit</ion-label>
+    <ion-input placeholder="Bitte eingeben"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Anzahl Zimmer</ion-label>
+    <ion-input placeholder="Bitte eingeben"></ion-input>
+  </ion-item>
+
+  <button ion-button round (click)="addHotel">Freigeben</button>
+
+  <button ion-button round>Alles löschen</button>
+
+
 </ion-content>

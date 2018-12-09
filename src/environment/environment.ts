@@ -1,5 +1,5 @@
 export const firebaseConfig = {
     fire: {
 
-    }
+       
 };

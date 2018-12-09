@@ -36,7 +36,7 @@ export class LoginPage {
   }
 
   signIn(email, password) {
-    this.afAuth.auth.signInWithEmailAndPassword(email.value, password.value);
+    this.afAuth.auth.signInWithEmailAndPassword(email.value, password.value)
       .then(() => {
         this.navCtrl.setRoot(TabsPage);
       }).catch(() => {
