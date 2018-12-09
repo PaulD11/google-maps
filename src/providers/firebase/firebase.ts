@@ -14,10 +14,12 @@ export class FirebaseProvider {
   constructor() {
   }
 
-  saveData(name) {
+  saveData(name, price, date) {
     let newHotelKey = firebase.database().ref().child('hotels').push().key;
     this.database.ref('/hotels/' + newHotelKey).set({
       hotelname: name,
+      preis: price,
+      datum: date,
     }, function (error) {
       if (error) {
         console.log("failed");

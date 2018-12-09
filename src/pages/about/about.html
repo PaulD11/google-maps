@@ -8,10 +8,18 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-button color="light" (click)="saveData(hotel)">Save Data</button>
+    <button ion-button color="light" (click)="saveData(hotel, price, date)">Save Data</button>
     <ion-item>
       <ion-label fixed>Hotelname</ion-label>
       <ion-input type="text" [(ngModel)]="hotel" placeholder="Hotelname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Preis</ion-label>
+      <ion-input type="text" [(ngModel)]="price" placeholder="Preis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Datum</ion-label>
+      <ion-input type="text" [(ngModel)]="date" placeholder="Datum"></ion-input>
     </ion-item>
     <ion-item class="text" *ngFor="let hotel of hotels | async">
       {{hotel | json}}

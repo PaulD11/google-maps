@@ -22,8 +22,8 @@ export class AboutPage {
     this.hotels = this.retrieveData();
   }
 
-  saveData(hotel) {
-    this.firebaseService.saveData(hotel);
+  saveData(hotel, price, date) {
+    this.firebaseService.saveData(hotel, price, date);
     this.hotels = this.retrieveData();
     this.hotel = "";
   }
