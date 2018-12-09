@@ -22,12 +22,6 @@ export class AboutPage {
     this.hotels = this.retrieveData();
   }
 
- /* saveData(hotel) {
-    this.firebaseService.saveData(hotel);
-    this.hotels = this.retrieveData();
-    this.hotel = "";
-  }*/
-
   retrieveData() {
     return firebase.database().ref('/hotels').once('value').then(function (snapshot) {
       var returnArr = [];
@@ -39,6 +33,10 @@ export class AboutPage {
       });
       return returnArr;
     });
+  }
+
+  deleteData(key){
+    this.firebaseService.deleteData(key);
   }
 
 }

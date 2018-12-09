@@ -34,4 +34,8 @@ export class FirebaseProvider {
     });
   }
 
+  deleteData(key){
+    this.database.ref('/hotels/'+ key).remove();
+  }
+
 }
