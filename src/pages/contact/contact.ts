@@ -1,34 +1,48 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireList } from 'angularfire2/database';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
 export class ContactPage {
-  productsRef: AngularFireList<any> = this.db.list('hotels');
+  hotels: any;
+  hotel: string;
 
- constructor(public alertCtrl: AlertController,
-  public db: AngularFireDatabase,
-) { }
+  constructor(
+    public navCtrl: NavController,
+    private firebaseService: FirebaseProvider) {
 
-addHotel(newName: string, newOrt: string, newprice: number, newdatum:number, newuhrzeit:number, newAnzahlzimmer:number) {
-  this.productsRef.push({ hotelName: newName, hotelOrt: newOrt, hotelpreis: newprice, hotelDatum:newdatum, 
-    hotelUhrzeiht: newuhrzeit, hotelZimmer : newAnzahlzimmer});
-}
-
-
-  showAlert() {
-    const alert = this.alertCtrl.create({
-      subTitle: 'Hotelzimmer wurde freigegeben',
-      buttons: ['OK']
-    });
-    alert.present();
   }
+
+  ionViewDidLoad(){
+    this.hotels = this.retrieveData();
+  }
+
+  saveData(hotel, price, date) {
+    this.firebaseService.saveData(name, price, date);
+    this.hotels = this.retrieveData();
+    this.hotel = "";
+  }
+
+  retrieveData() {
+    return firebase.database().ref('/hotels').once('value').then(function (snapshot) {
+      var returnArr = [];
+      snapshot.forEach(function(child) {
+          var item = child.val();
+          item.key = child.key;
+  
+          returnArr.push(item);
+      });
+      return returnArr;
+    });
+  }
+
 }
+
+
 
 
 

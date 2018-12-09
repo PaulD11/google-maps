@@ -6,42 +6,52 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
- 
-   
+<ion-contentpadding>
+  <ion-list>
   <ion-item>
     <ion-label color="primary">Hotelname</ion-label>
-    <ion-input placeholder="Bitte eingeben"></ion-input>
+    <ion-input type="text" [(ngModel)]="name" placeholder="Bitte eingeben"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary">Ort</ion-label>
-    <ion-input placeholder="Bitte eingeben"></ion-input>
+    <ion-input type="text" [(ngModel)]="place" placeholder="Bitte eingeben"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary">Preis</ion-label>
-    <ion-input placeholder="Bitte eingeben"></ion-input>
+    <ion-input type="text" [(ngModel)]="price" placeholder="Bitte eingeben"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary">Datum</ion-label>
-    <ion-input placeholder="Bitte eingeben"></ion-input>
+    <ion-input type="text" [(ngModel)]="date" placeholder="Bitte eingeben"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary">Uhrzeit</ion-label>
-    <ion-input placeholder="Bitte eingeben"></ion-input>
+    <ion-input type="text" [(ngModel)]="time" placeholder="Bitte eingeben"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary">Anzahl Zimmer</ion-label>
-    <ion-input placeholder="Bitte eingeben"></ion-input>
+    <ion-input type="text" [(ngModel)]="amount" placeholder="Bitte eingeben"></ion-input>
   </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Koordinate 1</ion-label>
+    <ion-input type="text" [(ngModel)]="lat" placeholder="Bitte eingeben"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Koordiante 2</ion-label>
+    <ion-input type="text" [(ngModel)]="Ing" placeholder="Bitte eingeben"></ion-input>
+  </ion-item>
+
 
   <button ion-button round (click)="addHotel">Freigeben</button>
 
   <button ion-button round>Alles löschen</button>
 
-
+</ion-list>
 </ion-content>
