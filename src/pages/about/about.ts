@@ -19,7 +19,6 @@ export class AboutPage {
 
   ionViewDidLoad(){
     this.hotels = this.firebaseService.retrieveData();
-    console.log(this.hotels.__zone_symbol__value);
   }
 
   saveData(hotel) {
