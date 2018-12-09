@@ -8,10 +8,10 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-button color="light" (click)="saveData(hotel)" [disabled]="!hotelname.value">Save Data</button>
+    <button ion-button color="light" (click)="saveData(hotel)">Save Data</button>
     <ion-item>
       <ion-label fixed>Hotelname</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="hotel" #hotelname></ion-input>
+      <ion-input type="text" [(ngModel)]="hotel" placeholder="Hotelname"></ion-input>
     </ion-item>
     <ion-item class="text" *ngFor="let hotel of hotels | async">
       {{hotel | json}}
