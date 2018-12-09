@@ -18,16 +18,16 @@ export class ContactPage {
   }
 
   ionViewDidLoad(){
-    this.hotels = this.retrieveData();
+   // this.hotels = this.retrieveData();
   }
 
-  saveData(hotel, price, date) {
-    this.firebaseService.saveData(name, price, date);
-    this.hotels = this.retrieveData();
+  saveData(name, place, price, date, time, amount, lat, Ing) {
+    this.firebaseService.saveData(name, place, price, date, time, amount, lat, Ing);
+   // this.hotels = this.retrieveData();
     this.hotel = "";
   }
 
-  retrieveData() {
+ /* retrieveData() {
     return firebase.database().ref('/hotels').once('value').then(function (snapshot) {
       var returnArr = [];
       snapshot.forEach(function(child) {
@@ -38,8 +38,7 @@ export class ContactPage {
       });
       return returnArr;
     });
-  }
-
+  }*/
 }
 
 

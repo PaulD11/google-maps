@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-contentpadding>
+<ion-content padding>
   <ion-list>
   <ion-item>
     <ion-label color="primary">Hotelname</ion-label>
@@ -48,8 +48,7 @@
     <ion-input type="text" [(ngModel)]="Ing" placeholder="Bitte eingeben"></ion-input>
   </ion-item>
 
-
-  <button ion-button round (click)="addHotel">Freigeben</button>
+  <button ion-button round (click)="saveData(name, place, price, date, time, amount, lat, Ing)">Freigeben</button>
 
   <button ion-button round>Alles löschen</button>
 
