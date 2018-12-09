@@ -15,6 +15,7 @@ import { LoginPage } from '../pages/login/login';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from '../environment/environment';
+import { FirebaseProvider } from '../providers/firebase/firebase';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { firebaseConfig } from '../environment/environment';
     StatusBar,
     SplashScreen,
     AngularFireAuth,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider
   ]
 })
 export class AppModule {}

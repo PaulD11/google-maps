@@ -24,7 +24,7 @@ export class LoginPage {
   constructor(
     private afAuth: AngularFireAuth,
     private navCtrl: NavController,
-    ) {
+  ) {
     afAuth.authState.subscribe(user => {
       this.user = user;
       console.log(this.user);
@@ -36,8 +36,8 @@ export class LoginPage {
   }
 
   signIn(email, password) {
-    this.afAuth.auth.signInWithEmailAndPassword(email.value, password.value);
-      .then(() => {
+    this.afAuth.auth.signInWithEmailAndPassword(email.value, password.value)
+      .then((res) => {
         this.navCtrl.setRoot(TabsPage);
       }).catch(() => {
         console.log("error");;
@@ -53,4 +53,7 @@ export class LoginPage {
       })
   }
 
+  forgotPassword(email) {
+    firebase.auth().sendPasswordResetEmail(email.value);
+  }
 }

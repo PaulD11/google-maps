@@ -7,8 +7,14 @@
 </ion-header>
 
 <ion-content padding>
-
-    <ion-icon name="heart"></ion-icon>                    <!-- active -->
-    <ion-icon name="heart" isActive="false"></ion-icon>  <!-- inactive -->
-
+  <ion-list>
+    <button ion-button color="light" (click)="saveData(hotel)" [disabled]="!hotelname.value">Save Data</button>
+    <ion-item>
+      <ion-label fixed>Hotelname</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="hotel" #hotelname></ion-input>
+    </ion-item>
+    <ion-item class="text" *ngFor="let hotel of hotels | async">
+      {{hotel | json}}
+    </ion-item>
+  </ion-list>
 </ion-content>
