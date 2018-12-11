@@ -17,8 +17,9 @@ export class MarkerProvider {
   setMarker(map){
     firebase.database().ref('hotels').once('value').then((snapshot) => {
       snapshot.forEach(function(child) {
+        console.log(child.val().lat)
           let marker = new google.maps.Marker({
-            position: {lat: child.val().lat, lng: child.val().lng},
+            position: {lat: Number(child.val().lat), lng: Number(child.val().ing)},
             map: map,
             title: child.val().hotelname,
           });
