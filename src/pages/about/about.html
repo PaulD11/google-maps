@@ -20,10 +20,6 @@
         <button ion-button (click)="deleteData(key)">Löschen</button>
       </ion-item>
 
-      <ion-item class="text" *ngFor="let hotel of hotels | async">
-        {{hotel | json}}
-      </ion-item>
-
     </ion-list>
   </ion-list>
 </ion-content>

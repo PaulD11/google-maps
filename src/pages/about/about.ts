@@ -19,7 +19,9 @@ export class AboutPage {
   }
 
   ionViewDidLoad(){
-    this.hotels = this.retrieveData();
+    setTimeout(() =>{
+      this.hotels = this.retrieveData();
+    },500);
   }
 
   retrieveData() {
@@ -28,7 +30,6 @@ export class AboutPage {
       snapshot.forEach(function(child) {
           var item = child.val();
           item.key = child.key;
-  
           returnArr.push(item);
       });
       return returnArr;
