@@ -21,7 +21,6 @@ export class TabsPage {
   ) {
     afAuth.authState.subscribe(user => {
       this.user = user;
-      console.log(this.user);
     });
 
   }

@@ -16,6 +16,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from '../environment/environment';
 import { FirebaseProvider } from '../providers/firebase/firebase';
+import { MarkerProvider } from '../providers/marker/marker';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     SplashScreen,
     AngularFireAuth,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseProvider
+    FirebaseProvider,
+    MarkerProvider
   ]
 })
 export class AppModule {}
