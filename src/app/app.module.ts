@@ -17,6 +17,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from '../environment/environment';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { MarkerProvider } from '../providers/marker/marker';
+import { BookProvider } from '../providers/book/book';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { MarkerProvider } from '../providers/marker/marker';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig.fire),
+    AngularFireModule.initializeApp(firebaseConfig.BAM),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,7 +48,8 @@ import { MarkerProvider } from '../providers/marker/marker';
     AngularFireAuth,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,
-    MarkerProvider
+    MarkerProvider,
+    BookProvider
   ]
 })
 export class AppModule {}
