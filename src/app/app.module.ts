@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Modal } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -18,6 +18,7 @@ import { firebaseConfig } from '../environment/environment';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { MarkerProvider } from '../providers/marker/marker';
 import { BookProvider } from '../providers/book/book';
+import { ModalContentPage } from '../pages/modal-content/modal-content';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BookProvider } from '../providers/book/book';
     HomePage,
     TabsPage,
     LoginPage,
+    ModalContentPage
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { BookProvider } from '../providers/book/book';
     HomePage,
     TabsPage,
     LoginPage,
+    ModalContentPage,
   ],
   providers: [
     StatusBar,
