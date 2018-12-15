@@ -1,11 +1,11 @@
 export const firebaseConfig = {
     fire: {
-    apiKey: "AIzaSyBaVEwGNNF_pMN7ozM-UNh8goFin7ZmxcI",
-    authDomain: "ultralastminute-1539441504454.firebaseapp.com",
-    databaseURL: "https://ultralastminute-1539441504454.firebaseio.com",
-    projectId: "ultralastminute-1539441504454",
-    storageBucket: "ultralastminute-1539441504454.appspot.com",
-    messagingSenderId: "695385962812"
+        apiKey: "AIzaSyBaVEwGNNF_pMN7ozM-UNh8goFin7ZmxcI",
+        authDomain: "ultralastminute-1539441504454.firebaseapp.com",
+        databaseURL: "https://ultralastminute-1539441504454.firebaseio.com",
+        projectId: "ultralastminute-1539441504454",
+        storageBucket: "ultralastminute-1539441504454.appspot.com",
+        messagingSenderId: "695385962812"
     },
     BAM: {
         apiKey: "AIzaSyC70-By14poBJrguMMQMpHcyNhiA-ir9qg",
