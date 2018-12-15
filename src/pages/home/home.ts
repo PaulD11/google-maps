@@ -27,16 +27,17 @@ export class HomePage {
   }
 
   loadMap() {
+    setTimeout(() => {
+      let latLng = new google.maps.LatLng(48.050144, 8.201419);
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      this.markerService.setMarker(this.map);
+    }, 500);
 
-    let latLng = new google.maps.LatLng(48.050144, 8.201419);
 
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-    this.markerService.setMarker(this.map);
   }
 }
