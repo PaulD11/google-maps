@@ -26,13 +26,13 @@ export class AboutPage {
 
   retrieveData() {
     return firebase.database().ref('/hotels').once('value').then(function (snapshot) {
-      var returnArr = [];
+      let hotels = [];
       snapshot.forEach(function(child) {
           var item = child.val();
           item.key = child.key;
-          returnArr.push(item);
+          hotels.push(item);
       });
-      return returnArr;
+      return hotels;
     });
   }
 

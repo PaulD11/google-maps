@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import * as firebase from 'firebase';
 /**
  * Generated class for the ModalContentPage page.
  *
@@ -14,16 +14,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ModalContentPage {
 
-  key: string;
-  
+  hotelName: any;
+  hotelPrice:any;
+  hotelKey:any;
+
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams) {
-  }
-  
-  ionViewDidLoad() {
-    this.key = this.navParams.get('key');
-    console.log('ionViewDidLoad ModalContentPage', this.key);
+    public navParams: NavParams,
+    public viewCtrl: ViewController) {
   }
 
+  ionViewDidLoad() {
+      this.hotelName = this.navParams.get('hotelname');
+      this.hotelPrice = this.navParams.get('price');
+      this.hotelKey = this.navParams.get('key');
+  }
+
+  dismiss(){
+    this.viewCtrl.dismiss();
+  }
+  
 }

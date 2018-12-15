@@ -20,7 +20,6 @@ export class MarkerProvider {
 
 
   setMarker(map){
-
     let markerProvider = new MarkerProvider(this.bookService, this.modalCtrl);
     firebase.database().ref('hotels').once('value').then((snapshot) => {
       snapshot.forEach(function(child) {
@@ -30,9 +29,12 @@ export class MarkerProvider {
             title: child.val().hotelname,
           });
           marker.addListener('click', function() {
-            let key = {"key": child.key};
-            markerProvider.bookService.book(key.key);
-            let modal = markerProvider.modalCtrl.create(ModalContentPage, key);
+            let hotel = {
+              "hotelname": child.val().hotelname,
+              "key": child.key,
+              "price": child.val().price
+            };
+            let modal = markerProvider.modalCtrl.create(ModalContentPage, hotel);
             modal.present();
           });
       });

@@ -9,9 +9,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BookProvider {
 
-  constructor() {
-    console.log('Hello BookProvider Provider');
-  }
+  constructor() {}
 
 
   book(hotelId){
