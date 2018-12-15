@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { FirebaseProvider } from '../firebase/firebase';
+import { HomePage } from '../../pages/home/home';
 
 /*
   Generated class for the BookProvider provider.
@@ -9,11 +11,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BookProvider {
 
-  constructor() {}
+  constructor(
+    private firebaseService: FirebaseProvider
+  ) {}
 
 
   book(hotelId){
-    console.log(hotelId);
+    this.firebaseService.deleteData(hotelId);
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import * as firebase from 'firebase';
+import { BookProvider } from '../../providers/book/book';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the ModalContentPage page.
  *
@@ -19,8 +21,10 @@ export class ModalContentPage {
   hotelKey:any;
 
   constructor(
+    public navController: NavController,
     public navParams: NavParams,
-    public viewCtrl: ViewController) {
+    public viewCtrl: ViewController,
+    private bookService: BookProvider) {
   }
 
   ionViewDidLoad() {
@@ -31,6 +35,12 @@ export class ModalContentPage {
 
   dismiss(){
     this.viewCtrl.dismiss();
+  }
+
+  book(){
+    this.navController.push(HomePage);
+    this.bookService.book(this.hotelKey);
+    this.dismiss();
   }
   
 }

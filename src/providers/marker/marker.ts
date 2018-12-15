@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { BookProvider } from '../book/book';
-import { ModalController } from 'ionic-angular';
+import { ModalController, Modal } from 'ionic-angular';
 import { ModalContentPage } from '../../pages/modal-content/modal-content';
 
 declare var google;
@@ -11,7 +11,8 @@ export class MarkerProvider {
 
   database = firebase.database();
 
-  hotels:any = [];
+  hotels:any;
+  modal:any;
 
   constructor(
     private bookService: BookProvider,
@@ -28,12 +29,12 @@ export class MarkerProvider {
             map: map,
             title: child.val().hotelname,
           });
+          let hotel = {
+            "hotelname": child.val().hotelname,
+            "key": child.key,
+            "price": child.val().price
+          };
           marker.addListener('click', function() {
-            let hotel = {
-              "hotelname": child.val().hotelname,
-              "key": child.key,
-              "price": child.val().price
-            };
             let modal = markerProvider.modalCtrl.create(ModalContentPage, hotel);
             modal.present();
           });

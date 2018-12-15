@@ -10,11 +10,8 @@ declare var google;
 })
 export class HomePage {
 
-  hotels: any;
-
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-
 
 
   constructor(
@@ -37,7 +34,6 @@ export class HomePage {
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
       this.markerService.setMarker(this.map);
     }, 500);
-
 
   }
 }
