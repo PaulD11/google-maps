@@ -8,7 +8,7 @@ before_script:
   - npm install -g ionic@latest
 
 script:
- — ionic cordova build
+ — ionic build
 
 deploy:
   provider: firebase
