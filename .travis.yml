@@ -10,11 +10,9 @@ before_script:
 script:
   - ionic-app-scripts build
 
-deploy:
-  provider: firebase
-  token:
-    secure: $FIREBASE_TOKEN
-  local_dir: www
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+
 
 notifications:
   email:
