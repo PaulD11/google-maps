@@ -15,10 +15,6 @@ deploy:
   token:
     secure: $FIREBASE_TOKEN
 
- on:
-   branch: master
- local_dir: www
-
 notifications:
   email:
     recipients:
