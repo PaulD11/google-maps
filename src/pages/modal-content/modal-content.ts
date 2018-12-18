@@ -33,14 +33,14 @@ export class ModalContentPage {
       this.hotelKey = this.navParams.get('key');
   }
 
-  dismiss(){
-    this.viewCtrl.dismiss();
+  dismiss(data){
+    this.viewCtrl.dismiss(data);
   }
 
   book(){
-    this.navController.push(HomePage);
-    this.bookService.book(this.hotelKey);
-    this.dismiss();
+    // this.navController.push(HomePage);
+    let data = { 'key': this.hotelKey };
+    this.dismiss(data);
   }
   
 }

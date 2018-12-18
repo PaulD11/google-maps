@@ -1,6 +1,10 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { MarkerProvider } from '../../providers/marker/marker';
+import { BookProvider } from '../../providers/book/book';
+import { ModalContentPage } from '../modal-content/modal-content';
+import * as firebase from 'firebase';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 declare var google;
 
@@ -12,11 +16,14 @@ export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  database = firebase.database();
 
 
   constructor(
     public navCtrl: NavController,
-    private markerService: MarkerProvider) {
+    private firebaseService: FirebaseProvider,
+    private bookService: BookProvider,
+    public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -32,8 +39,35 @@ export class HomePage {
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-      this.markerService.setMarker(this.map);
+      this.setMarker(this.map);
     }, 500);
 
+  }
+
+  setMarker(map){
+    let markerProvider = new MarkerProvider(this.bookService, this.modalCtrl);
+    let homeProvider = new HomePage(this.navCtrl, this.firebaseService, this.bookService, this.modalCtrl);
+    firebase.database().ref('hotels').once('value').then((snapshot) => {
+      snapshot.forEach(function(child) {
+          let marker = new google.maps.Marker({
+            position: {lat: Number(child.val().lat), lng: Number(child.val().ing)},
+            map: map,
+            title: child.val().hotelname,
+          });
+          let hotel = {
+            "hotelname": child.val().hotelname,
+            "key": child.key,
+            "price": child.val().price
+          };
+          marker.addListener('click', function() {
+            let modal = markerProvider.modalCtrl.create(ModalContentPage, hotel);
+            modal.present();
+            modal.onDidDismiss(data => {
+              homeProvider.firebaseService.deleteData(data.key);
+              homeProvider.navCtrl.setRoot(homeProvider.navCtrl.getActive().component);
+            });
+          });
+      });
+    });
   }
 }
