@@ -18,7 +18,7 @@ notifications:
   email:
     recipients:
       - laura.meyer@hs-furtwangen.de
-      - michael.schilling@hs-furtwangen.de
+      - m.schilling@hs-furtwangen.de
       - inna.beierbach@hs-furtwangen.de
       - paul.dederer@hs-furtwangen.de
     on_success: always
