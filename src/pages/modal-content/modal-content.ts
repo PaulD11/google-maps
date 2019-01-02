@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 import * as firebase from 'firebase';
 import { BookProvider } from '../../providers/book/book';
 import { HomePage } from '../home/home';
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the ModalContentPage page.
  *
@@ -16,21 +17,28 @@ import { HomePage } from '../home/home';
 })
 export class ModalContentPage {
 
-  hotelName: any;
+  hotelName:any;
   hotelPrice:any;
+  hotelDate:any;
+  hotelPlace:any;
   hotelKey:any;
+  hotelTime:any;
 
   constructor(
     public navController: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private bookService: BookProvider) {
+    private bookService: BookProvider,
+    public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
       this.hotelName = this.navParams.get('hotelname');
       this.hotelPrice = this.navParams.get('price');
-      this.hotelKey = this.navParams.get('key');
+      this.hotelDate = this.navParams.get('date');
+      this.hotelPlace=this.navParams.get('place');
+      this.hotelKey = this.navParams.get('key');   
+      this.hotelTime = this.navParams.get('time');
   }
 
   dismiss(data){
@@ -41,6 +49,20 @@ export class ModalContentPage {
     // this.navController.push(HomePage);
     let data = { 'key': this.hotelKey };
     this.dismiss(data);
+
+    const alert = this.alertCtrl.create({
+      title: 'Hotelbuchung',
+      subTitle: 'Ihre Hotelbuchung war erfolgreich!',
+      buttons: ['OK']
+    });
+    alert.present();
   }
+  }
+
+
+
   
-}
+
+
+
+

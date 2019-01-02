@@ -57,7 +57,10 @@ export class HomePage {
           let hotel = {
             "hotelname": child.val().hotelname,
             "key": child.key,
-            "price": child.val().price
+            "price": child.val().price,
+            "date":child.val().date,
+            "place":child.val().place,
+            "time":child.val().time
           };
           marker.addListener('click', function() {
             let modal = markerProvider.modalCtrl.create(ModalContentPage, hotel);
