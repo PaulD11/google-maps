@@ -29,6 +29,26 @@ export class FirebaseProvider {
     });
   }
 
+  book(hotelName, hotelPlace, hotelDate, hotelPrice, hotelTime, firstname, lastname, iban){
+    let newBookKey = firebase.database().ref().child('booking').push().key;
+    this.database.ref('/booking/' + newBookKey).set({
+      name: hotelName,
+      place: hotelPlace,
+      price: hotelPrice,
+      date: hotelDate,
+      time: hotelTime,
+      firstname: firstname,
+      lastname: lastname,
+      iban: iban,
+    }, function (error) {
+      if (error) {
+        console.log("failed");
+      } else {
+        console.log("success");
+      }
+    });
+  }
+
   deleteData(key){
     this.database.ref('/hotels/'+ key).remove();
   }

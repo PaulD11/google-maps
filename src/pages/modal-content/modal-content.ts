@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 import { BookProvider } from '../../providers/book/book';
 import { HomePage } from '../home/home';
 import { AlertController } from 'ionic-angular';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
 /**
  * Generated class for the ModalContentPage page.
  *
@@ -29,7 +30,8 @@ export class ModalContentPage {
     public navParams: NavParams,
     public viewCtrl: ViewController,
     private bookService: BookProvider,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    private firebaseService: FirebaseProvider) {
   }
 
   ionViewDidLoad() {
@@ -45,10 +47,13 @@ export class ModalContentPage {
     this.viewCtrl.dismiss(data);
   }
 
-  book(){
+  book(hotelName, hotelPlace, hotelPrice, hotelDate, hotelTime, firstname, lastname, iban){
     // this.navController.push(HomePage);
     let data = { 'key': this.hotelKey };
     this.dismiss(data);
+
+this.firebaseService.book(hotelName, hotelPlace, hotelPrice, hotelDate, hotelTime, firstname, lastname, iban);
+
 
     const alert = this.alertCtrl.create({
       title: 'Hotelbuchung',
