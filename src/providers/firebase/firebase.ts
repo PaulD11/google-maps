@@ -29,7 +29,7 @@ export class FirebaseProvider {
     });
   }
 
-  book(hotelName, hotelPlace, hotelDate, hotelPrice, hotelTime, firstname, lastname, iban){
+  book(hotelName, hotelPlace, hotelPrice, hotelDate,  hotelTime, firstname, lastname, iban){
     let newBookKey = firebase.database().ref().child('booking').push().key;
     this.database.ref('/booking/' + newBookKey).set({
       name: hotelName,
