@@ -6,10 +6,12 @@ before_script:
   - npm install
   - npm install -g firebase-tools
   - npm install -g ionic@latest
+  - selenium-standalone start
+  - ionic serve
 
 script:
   - ionic-app-scripts build
-
+  - protractor e2e/conf.js
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
 
