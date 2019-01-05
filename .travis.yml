@@ -6,11 +6,21 @@ before_script:
   - npm install
   - npm install -g firebase-tools
   - npm install -g ionic@latest
-  - selenium-standalone start
-  - ionic serve
+- npm install protractor --save-dev
+- npm install -g webdriver-manager
+- webdriver-manager update
+- npm install jasmine --save-dev
+- npm install jasmine-spec-reporter --save-dev
+- npm install ts-node --save-dev
+- npm install connect --save-dev
+ 
+- npm install @types/jasmine --save-dev
+- npm install @types/node --save-dev
 
 script:
-  - ionic-app-scripts build
+  - ionic-app-scripts build  
+  - selenium-standalone start
+  - ionic serve
   - protractor e2e/conf.js
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
