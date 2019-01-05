@@ -15,4 +15,5 @@ export const firebaseConfig = {
         storageBucket: "bam20182019-f5c79.appspot.com",
         messagingSenderId: "234706923908"
     }
+    
 };
