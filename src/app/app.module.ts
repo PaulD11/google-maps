@@ -19,7 +19,6 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { MarkerProvider } from '../providers/marker/marker';
 import { BookProvider } from '../providers/book/book';
 import { ModalContentPage } from '../pages/modal-content/modal-content';
-import { AdminProvider } from '../providers/admin/admin';
 
 @NgModule({
   declarations: [
@@ -53,8 +52,7 @@ import { AdminProvider } from '../providers/admin/admin';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,
     MarkerProvider,
-    BookProvider,
-    AdminProvider
+    BookProvider
   ]
 })
 export class AppModule {}
