@@ -21,6 +21,7 @@ export class AboutPage {
   ionViewDidLoad(){
     setTimeout(() =>{
       this.hotels = this.retrieveData();
+      console.log(this.hotels)
     },500);
   }
 
