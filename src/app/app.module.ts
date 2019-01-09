@@ -33,7 +33,7 @@ import { ModalContentPage } from '../pages/modal-content/modal-content';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig.fire),
+    AngularFireModule.initializeApp(firebaseConfig.BAM),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
