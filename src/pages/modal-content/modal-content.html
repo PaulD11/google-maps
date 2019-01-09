@@ -11,12 +11,36 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+
+<ion-content padding>
   <ion-list>
       <ion-item>
-       {{hotelName}}<br>
-       {{hotelPrice}} <br>
-       <button ion-button full outline (click) = "book()">Buchen</button>
+      Hotel: {{hotelName}}<br>
+      Ort: {{hotelPlace}}<br>
+      Preis: {{hotelPrice}}<br>   
+      Datum: {{hotelDate}}<br>
+      Uhrzeit: {{hotelTime}}<br>
       </ion-item>
+
+  </ion-list>
+
+    <ion-item>
+      <ion-label color="primary">Vorname</ion-label>
+      <ion-input type="text" [(ngModel)]="firstname" placeholder="Bitte eingeben"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Nachname</ion-label>
+      <ion-input type="text" [(ngModel)]="lastname" placeholder="Bitte eingeben"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">IBAN</ion-label>
+      <ion-input type="text" [(ngModel)]="iban" placeholder="Bitte eingeben"></ion-input>
+    </ion-item>
+
+
+  <ion-list>
+  
+    <ion-item><button ion-button full outline (click) = "book(hotelName, hotelPlace, hotelPrice, hotelDate, hotelTime, firstname, lastname, iban)">Buchen</button>
+    </ion-item>
   </ion-list>
 </ion-content>

@@ -44,29 +44,34 @@ export class HomePage {
 
   }
 
-  setMarker(map){
+  setMarker(map) {
     let markerProvider = new MarkerProvider(this.bookService, this.modalCtrl);
     let homeProvider = new HomePage(this.navCtrl, this.firebaseService, this.bookService, this.modalCtrl);
     firebase.database().ref('hotels').once('value').then((snapshot) => {
-      snapshot.forEach(function(child) {
-          let marker = new google.maps.Marker({
-            position: {lat: Number(child.val().lat), lng: Number(child.val().ing)},
-            map: map,
-            title: child.val().hotelname,
-          });
-          let hotel = {
-            "hotelname": child.val().hotelname,
-            "key": child.key,
-            "price": child.val().price
-          };
-          marker.addListener('click', function() {
-            let modal = markerProvider.modalCtrl.create(ModalContentPage, hotel);
-            modal.present();
-            modal.onDidDismiss(data => {
-              homeProvider.firebaseService.deleteData(data.key);
+      snapshot.forEach(function (child) {
+        let marker = new google.maps.Marker({
+          position: { lat: Number(child.val().lat), lng: Number(child.val().ing) },
+          map: map,
+          title: child.val().hotelname,
+        });
+        let hotel = {
+          "hotelname": child.val().hotelname,
+          "key": child.key,
+          "price": child.val().price,
+          "date": child.val().date,
+          "place": child.val().place,
+          "time": child.val().time
+        };
+        marker.addListener('click', function () {
+          let modal = markerProvider.modalCtrl.create(ModalContentPage, hotel);
+          modal.present();
+            modal.onDidDismiss((data) => {
+              if(data){
+                homeProvider.firebaseService.deleteData(data.key);
+              }
               homeProvider.navCtrl.setRoot(homeProvider.navCtrl.getActive().component);
             });
-          });
+        });
       });
     });
   }
