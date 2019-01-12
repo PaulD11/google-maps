@@ -9,49 +9,25 @@ describe('Login', function () {
         browser.get(url);
 
         //LOGOUT
-       /* element(by.id('logout')).click();
-       */
+        element(by.id('logout')).click();
+        
         browser.driver.sleep(5000);
 
+        element(By.id("email")).sendKeys("laura.meyer@hs-furtwangen.de");
+        element(By.id("password")).sendKeys("123456789");
 
-        element(By.id("password")).click();
-        browser.driver.sleep(5000);
 
-
-        element(By.id("password")).sendKeys("test");
-       
         browser.driver.sleep(5000);
         element(by.id('login')).click();
-        /*    
-         .value("123456789");
 
-          inputField = element(By.name("password"));
-      browser.driver.executeScript("arguments[0].setAttribute('value', '" + 123456 + "')", inputField);
-    
+        browser.driver.sleep(5000);
 
+        //expected Conditions
 
+        let EC = protractor.ExpectedConditions;
+        var logoutButton = element(by.id('logout'));
+        browser.wait(EC.elementToBeClickable(logoutButton), 10000);
 
- 
-  element(by.ionInput('email')).sendKeys("12345678");
- 
-      actions = new Actions(driver);
-    actions.moveToElement(element.by.id("email"));
-    actions.click();
-    actions.sendKeys("Some Name");
-    actions.build().perform();element(By.id("email")).click();
-    element(By.id("email")).sendKeys("laura.meyer@hs-furtwangen.de");
-
-    
-
-
-    // LOGIN
-    element(by.id('login')).click();
-/*
-    // expected Conditions
-    let EC = protractor.ExpectedConditions;
-    browser.wait(EC.urlContains('localhost:8100/'), 10000);
-    var logoutButton = element(by.id('logout'));
-    browser.wait(EC.elementToBeClickable(logoutButton), 10000);*/
 
     });
 });

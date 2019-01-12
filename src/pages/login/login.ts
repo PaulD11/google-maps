@@ -36,7 +36,7 @@ export class LoginPage {
   }
 
   signIn(email, password) {
-    this.afAuth.auth.signInWithEmailAndPassword(email.value, password.value)
+    this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((res) => {
         this.navCtrl.setRoot(TabsPage);
       }).catch(() => {
@@ -45,7 +45,7 @@ export class LoginPage {
   }
 
   signUp(email, password) {
-    this.afAuth.auth.createUserWithEmailAndPassword(email.value, password.value)
+    this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(() => {
         console.log("success");
       }).catch((error) => {
@@ -54,6 +54,6 @@ export class LoginPage {
   }
 
   forgotPassword(email) {
-    firebase.auth().sendPasswordResetEmail(email.value);
+    firebase.auth().sendPasswordResetEmail(email);
   }
 }
