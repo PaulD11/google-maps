@@ -9,14 +9,59 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Login/ Registrieren</ion-title>
+    <ion-title>Login / Registrieren</ion-title>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content>
+  <!--
+  <form>
+    <div>
+      <label>Email address</label>
+      <input placeholder="Enter email" name="email">
+    </div>
 
-<ion-content padding>
-  <ion-list>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Password">
+
+    <div>
+      <button id=login (click)=signIn(email,password) class="btn btn-primary">Einloggen</button>
+    </div>
+    <div>
+      <button id=register (click)=signUp(email,password) class="btn btn-primary">Registrieren</button>
+    </div>
+    <div>
+      <button id=forgot_password (click)=forgotPassword(email) class="btn btn-primary">Passwort vergessen</button>
+    </div>
+  </form>-->
+
+
+  <form class="form-signin">
+    <label for="email" class="sr-only">Email Adresse</label>
+    <input type="email" id="email" class="form-control" placeholder="Email address" [(ngModel)]="email" name="email">
+    <label for="Password" class="sr-only">Password</label>
+    <input type="password" id="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
+    <div>
+      <button id=login class="card-body" (click)="signIn(email, password)">Login</button>
+    </div>
+    <div>
+      <button id=register class="card-body" (click)="signUp(email, password)">Registrieren</button>
+    </div>
+    <div>
+      <button id=forgot_password class="card-body" (click)="forgotPassword(email, password)">Passwort vergessen</button>
+    </div>
+  </form>
+
+
+  <!--<ion-list>
+    
+    
+   
+        <button ion-button id=login full (click)="signIn(email,password)">Login</button>
+
+
+
     <ion-item>
       <ion-label color="primary" floating>Email</ion-label>
       <ion-input name="email" #email></ion-input>
@@ -28,6 +73,6 @@
     <button ion-button id=login full (click)="signIn(email,password)">Login</button>
     <button ion-button id=register color="secondary" full (click)="signUp(email,password)">Register</button>
     <button ion-button id=forgot_password color="secondary" full (click)="forgotPassword(email)">Forgot Password</button>
-  </ion-list>
+  </ion-list>-->
 
 </ion-content>
