@@ -9,20 +9,25 @@ describe('Login', function () {
         browser.get(url);
 
         //LOGOUT
-        element(by.id('logout')).click();
+       /* element(by.id('logout')).click();
+       */
         browser.driver.sleep(5000);
 
 
-        element(By.name("password")).click();
+        element(By.id("password")).click();
         browser.driver.sleep(5000);
 
 
-        inputField = element(By.name("password"));
-      browser.driver.executeScript("arguments[0].setAttribute('value', '" + 123456 + "')", inputField);
+        element(By.id("password")).sendKeys("test");
+       
         browser.driver.sleep(5000);
+        element(by.id('login')).click();
         /*    
          .value("123456789");
-    element(by.ioninput[name='email']).sendKeys("test");
+
+          inputField = element(By.name("password"));
+      browser.driver.executeScript("arguments[0].setAttribute('value', '" + 123456 + "')", inputField);
+    
 
 
 
