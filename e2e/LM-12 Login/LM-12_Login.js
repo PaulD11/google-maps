@@ -11,7 +11,7 @@ describe('Login', function () {
         //LOGOUT
         element(by.id('logout')).click();
     
-
+        browser.driver.sleep(1000);
         element(By.id("email")).sendKeys("laura.meyer@hs-furtwangen.de");
         element(By.id("password")).sendKeys("123456789");
 
