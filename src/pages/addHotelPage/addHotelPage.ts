@@ -4,7 +4,7 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 @Component({
   selector: 'page-contact',
-  templateUrl: 'contact.html'
+  templateUrl: 'addHotelPage.html'
 })
 export class AddHotelPage {
   hotels: any;

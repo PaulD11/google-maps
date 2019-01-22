@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import * as firebase from 'firebase';
+import { AddHotelPage } from '../addHotelPage/addHotelPage';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -16,7 +16,7 @@ export class TabsPage {
   isAdmin: boolean = false;
   tab1Root = HomePage;
   tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab3Root = AddHotelPage;
 
   constructor(private afAuth: AngularFireAuth,
     private navCtrl: NavController

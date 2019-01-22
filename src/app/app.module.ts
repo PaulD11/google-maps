@@ -4,7 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler, Modal } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { AddHotelPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -19,6 +18,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { MarkerProvider } from '../providers/marker/marker';
 import { BookProvider } from '../providers/book/book';
 import { ModalContentPage } from '../pages/modal-content/modal-content';
+import { AddHotelPage } from '../pages/addHotelPage/addHotelPage';
 
 @NgModule({
   declarations: [
