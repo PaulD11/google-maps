@@ -6,7 +6,7 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
-export class ContactPage {
+export class AddHotelPage {
   hotels: any;
   hotel: string;
 

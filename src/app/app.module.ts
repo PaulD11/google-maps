@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler, Modal } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { AddHotelPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -24,7 +24,7 @@ import { ModalContentPage } from '../pages/modal-content/modal-content';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    AddHotelPage,
     HomePage,
     TabsPage,
     LoginPage,
@@ -39,7 +39,7 @@ import { ModalContentPage } from '../pages/modal-content/modal-content';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    AddHotelPage,
     HomePage,
     TabsPage,
     LoginPage,

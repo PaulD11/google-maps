@@ -52,7 +52,7 @@ export class ModalContentPage {
     let data = { 'key': this.hotelKey };
     this.dismiss(data);
 
-this.firebaseService.book(hotelName, hotelPlace, hotelPrice, hotelDate, hotelTime, firstname, lastname, iban);
+  this.firebaseService.book(hotelName, hotelPlace, hotelPrice, hotelDate, hotelTime, firstname, lastname, iban);
 
 
     const alert = this.alertCtrl.create({

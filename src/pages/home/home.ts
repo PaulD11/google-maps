@@ -31,7 +31,7 @@ export class HomePage {
   }
 
   loadMap() {
-    setTimeout(() => {
+      setTimeout(() => {
       let latLng = new google.maps.LatLng(48.050144, 8.201419);
       let mapOptions = {
         center: latLng,
@@ -40,8 +40,7 @@ export class HomePage {
       }
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
       this.setMarker(this.map);
-    }, 500);
-
+    }, 1000);
   }
 
   setMarker(map) {
