@@ -14,9 +14,9 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 @Component({
   selector: 'page-modal-content',
-  templateUrl: 'modal-content.html',
+  templateUrl: 'booking.html',
 })
-export class ModalContentPage {
+export class BookingPage {
 
   hotelName:any;
   hotelPrice:any;

@@ -16,9 +16,9 @@ import { firebaseConfig } from '../environment/environment';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { MarkerProvider } from '../providers/marker/marker';
 import { BookProvider } from '../providers/book/book';
-import { ModalContentPage } from '../pages/modal-content/modal-content';
 import { AddHotelPage } from '../pages/addHotelPage/addHotelPage';
 import { ShowHotelPage } from '../pages/showHotelPage/showHotelPage';
+import { BookingPage } from '../pages/booking/booking';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { ShowHotelPage } from '../pages/showHotelPage/showHotelPage';
     HomePage,
     TabsPage,
     LoginPage,
-    ModalContentPage
+    BookingPage,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +43,7 @@ import { ShowHotelPage } from '../pages/showHotelPage/showHotelPage';
     HomePage,
     TabsPage,
     LoginPage,
-    ModalContentPage,
+    BookingPage,
   ],
   providers: [
     StatusBar,

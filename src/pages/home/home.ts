@@ -2,9 +2,9 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { MarkerProvider } from '../../providers/marker/marker';
 import { BookProvider } from '../../providers/book/book';
-import { ModalContentPage } from '../modal-content/modal-content';
 import * as firebase from 'firebase';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
+import { BookingPage } from '../booking/booking';
 
 declare var google;
 
@@ -62,7 +62,7 @@ export class HomePage {
           "time": child.val().time
         };
         marker.addListener('click', function () {
-          let modal = markerProvider.modalCtrl.create(ModalContentPage, hotel);
+          let modal = markerProvider.modalCtrl.create(BookingPage, hotel);
           modal.present();
             modal.onDidDismiss((data) => {
               if(data){
