@@ -5,9 +5,9 @@ import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-about',
-  templateUrl: 'about.html'
+  templateUrl: 'showHotelPage.html'
 })
-export class AboutPage {
+export class ShowHotelPage {
 
   hotels: any;
   hotel: string;

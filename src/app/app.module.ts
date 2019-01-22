@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, Modal } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -19,11 +18,12 @@ import { MarkerProvider } from '../providers/marker/marker';
 import { BookProvider } from '../providers/book/book';
 import { ModalContentPage } from '../pages/modal-content/modal-content';
 import { AddHotelPage } from '../pages/addHotelPage/addHotelPage';
+import { ShowHotelPage } from '../pages/showHotelPage/showHotelPage';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    ShowHotelPage,
     AddHotelPage,
     HomePage,
     TabsPage,
@@ -38,7 +38,7 @@ import { AddHotelPage } from '../pages/addHotelPage/addHotelPage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    ShowHotelPage,
     AddHotelPage,
     HomePage,
     TabsPage,
